@@ -57,7 +57,7 @@ def findExpert():
 def findCoauthors():
     author = request.args.get('author')
     coauthor_list = getCoauthor(author)
-    coauthor_json = json.dumps(coauthor_list)
+    coauthors_json = json.dumps(coauthor_list)
     return coauthors_json
 
 @app.route('/expert_finding/show/')
@@ -70,5 +70,4 @@ def showExpert():
 def showCoauthors():
     author = request.args.get('author')
     coauthor_list = getCoauthor(author)
-    print coauthor_list
     return render_template('coauthors.html', author = author, coauthor_list = coauthor_list)
