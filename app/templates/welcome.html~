@@ -1,0 +1,11 @@
+<title> welcome </title>
+<h1>Welcome {{username}} !</h1>
+<h2>Your e-mail address is {{email}} !<h2>
+
+<form action="/expert_finding/show" method="post" name="search">
+    {{form.hidden_tag()}}
+    <p> Enter a domain<br>
+        {{form.content(size=80)}}<br>
+    </p>
+    <p><input type="submit" value="Search"></p>
+</form>

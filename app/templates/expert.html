@@ -1,0 +1,9 @@
+<h2> Searching result for {{search_content}} </h2>
+
+{% for expert in expert_list %}
+    <li> <a href = "/coauthors/show/?author={{ expert['index'] }}">{{ expert['name'] }}</a> </br>
+         index:{{ expert['index'] }}
+         hi:{{ expert['hi'] }} 
+    </li>
+    </br>
+{% endfor %}

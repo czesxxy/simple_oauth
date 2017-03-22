@@ -1,0 +1,7 @@
+<h1> Coauthors with {{ author }} </h1>
+{% for author in coauthor_list %}
+<li>
+    {{ author['name'] }} </br>
+    index:{{ author['index'] }} 
+    time:{{ author['time'] }}
+</li>
