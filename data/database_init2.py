@@ -7,7 +7,11 @@ data = file.read()
 pairs = data.split('#')
 print len(pairs)
 
+cnt = 0
 for pair in pairs:
+    if cnt % 10000 == 0:
+        print cnt
+    cnt = cnt + 1
     p = pair.split()
     if len(p) < 1:
         continue
@@ -18,3 +22,5 @@ for pair in pairs:
     r.sadd(b+':coauthor', a)
     r.set(a+':coauthor:'+b, time)
     r.set(b+':coauthor:'+a, time)
+
+r.save()

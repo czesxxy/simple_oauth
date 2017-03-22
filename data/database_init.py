@@ -8,19 +8,19 @@ data = file.read()
 people = data.split('\n\n')
 print len(people)
 
-cnt = 10;
+cnt = 0;
 for person in people:
-
-    if cnt < 0:
-        bre
-    info = person.split('#')
+    if cnt % 10000 == 0:
+        print cnt
+    cnt = cnt + 1
+    info = person.split('\n#')
     for entry in info:
         if entry == '':
             continue
         d = entry.split(' ', 1)
         if len(d) < 1:
             continue
-        if d[0] == 'index':
+        if d[0] == '#index':
             index = d[1]
         else:
             if len(d) > 1:
@@ -34,5 +34,6 @@ for person in people:
                 domains = d[1].split(';')
                 for domain in domains:
                     r.rpush('domain:'+domain, index)
+r.save()
         
         
