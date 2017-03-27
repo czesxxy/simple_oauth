@@ -1,5 +1,5 @@
 import redis
-r = redis.Redis(host='localhost', port=6379)
+r = redis.Redis(host='13.91.93.98', port=6379)
 r.flushall()
 
 file = open('AMiner-Author.txt')

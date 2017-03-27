@@ -33,9 +33,7 @@ def getCoauthor(author):
     for person in id_time:
         p = dict()
         index = person[0]
-        print index
         p['index'] = index
-        print r.get(index+':n')
         p['name'] = unicode(r.get(index+':n'), "utf-8")
         p['time'] = person[1]
         coauthor_list.append(p)

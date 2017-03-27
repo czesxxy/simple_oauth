@@ -21,7 +21,6 @@ github = OAuth2Service(
 
 @app.route('/')
 def index():
-    print(request.args)
     return render_template('index.html')
 
 @app.route('/login')
